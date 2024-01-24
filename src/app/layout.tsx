@@ -1,31 +1,14 @@
-import "../global.css";
-import { Inter } from "@next/font/google";
-import LocalFont from "@next/font/local";
-import { Metadata } from "next";
-import { Analytics } from "./components/analytics";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import LocalFont from "next/font/local";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "chronark.com",
-    template: "%s | chronark.com",
+    default: "theSELKIRKS",
+    template: "%s | theSELKIRKS",
   },
-  description: "Co-founder of unkey.dev and founder of planetfall.io",
-  openGraph: {
-    title: "chronark.com",
-    description:
-      "Co-founder of unkey.dev and founder of planetfall.io",
-    url: "https://chronark.com",
-    siteName: "chronark.com",
-    images: [
-      {
-        url: "https://chronark.com/og.png",
-        width: 1920,
-        height: 1080,
-      },
-    ],
-    locale: "en-US",
-    type: "website",
-  },
+  description: "Welcome to the SELKIRKS family website",
   robots: {
     index: true,
     follow: true,
@@ -51,7 +34,7 @@ const inter = Inter({
 });
 
 const calSans = LocalFont({
-  src: "../public/fonts/CalSans-SemiBold.ttf",
+  src: "../../public/fonts/CalSans-SemiBold.ttf",
   variable: "--font-calsans",
 });
 
@@ -62,9 +45,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
-      <head>
-        <Analytics />
-      </head>
       <body
         className={`bg-black ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
           }`}

@@ -1,13 +1,12 @@
+import type { Config } from "tailwindcss";
 const defaultTheme = require("tailwindcss/defaultTheme");
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-	content: [
-		"./app/**/*.{js,ts,jsx,tsx}",
-		"./mdx-components.tsx",
-		"content/**/*.mdx",
-	],
-
+const config: Config = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
 	theme: {
 		extend: {
 			typography: {
@@ -106,6 +105,7 @@ module.exports = {
 	},
 	plugins: [
 		require("@tailwindcss/typography"),
-		require("tailwindcss-debug-screens"),
+		//require("tailwindcss-debug-screens"),
 	],
 };
+export default config;
